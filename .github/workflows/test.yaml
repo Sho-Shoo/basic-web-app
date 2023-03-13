@@ -1,0 +1,27 @@
+name: Vercel Test Deployment
+
+on:
+
+push:
+
+branches:
+
+- main
+
+jobs:
+
+Deploy-Test:
+
+runs-on: ubuntu-latest
+
+name: Run lint and test
+
+steps:
+
+- uses: actions/checkout@v3
+
+- uses: bahmutov/npm-install@v1
+
+- run: npm run lint 
+
+- run: npm run test 
