@@ -44,8 +44,8 @@ export default function QueryProcessor(query: string): string {
     }
     return "";
   }
-  
-  if (query.toLowerCase().includes("mius")) {
+
+  if (query.toLowerCase().includes("minus")) {
     var str_arr = query.split("minus");
     var num1 = parseInt(str_arr[0].replace(/\D/g, ''));
     var num2 = parseInt(str_arr[1].replace(/\D/g, ''));
