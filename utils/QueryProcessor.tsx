@@ -11,7 +11,7 @@ export default function QueryProcessor(query: string): string {
     return ("nb");
   }
 
-  if (query.toLowerCase().includes("whats") && query.toLowerCase().includes("plus")) {
+  if (query.toLowerCase().includes("plus")) {
     const str_arr = query.split("plus");
     const num1 = parseInt(str_arr[0].replace(/\D/g, '')); 
     const num2 = parseInt(str_arr[1].replace(/\D/g, '')); 
