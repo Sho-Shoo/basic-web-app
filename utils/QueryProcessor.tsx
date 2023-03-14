@@ -1,3 +1,5 @@
+import { maxHeaderSize } from "http";
+
 export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("shakespeare")) {
     return (
@@ -17,6 +19,18 @@ export default function QueryProcessor(query: string): string {
     var num2 = parseInt(str_arr[1].replace(/\D/g, ''));
 
     return (num1 + num2).toString();
+  }
+
+  if (query.toLowerCase().includes("which of the following numbers is the largest:")) {
+    var str_arr = query.split(": ");
+    var nums_str = str_arr[1];
+    var nums_str_arr = nums_str.split(", ");
+    var nums = nums_str_arr.map(function(str) {
+      // using map() to convert array of strings to numbers
+      return parseInt(str);
+    });
+
+    return Math.max(...nums).toString();
   }
 
   if (query.toLowerCase().includes("cube")) {
